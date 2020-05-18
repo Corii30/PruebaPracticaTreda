@@ -17,4 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('tiendas', 'TiendasController@tienda')->name('tiendas');
+Route::get('lstienda', 'TiendasController@index')->name('listaT');
+Route::post('tiendas', 'TiendasController@store');
+Route::put('tiendas/{id}', 'TiendasController@update');
+Route::delete('tiendas/{id}', 'TiendasController@destroy');
+
