@@ -10,7 +10,7 @@
 ## Prueba para ingreso Treda Solutionis
 
 El proyecto "Prueba práctica de PHP se desarrollo con la version 6 de Laravel utilizando bootstrap y Vue.js"<br><br>
-<b> A continuación, los pasos a seguir para su correcto funcionamiento: </b>
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
