@@ -2,11 +2,13 @@
     <div>                
         <a href="#" class="btn btn-primary float-right" data-toggle="modal" data-target="#crearTienda">
             Nueva tienda
+            <i class="far fa-building"></i>
         </a><br><br>
         <table class="table table-hover table-striped">
             <thead>
                 <tr>
                     <th>ID</th>
+                    <th>Productos</th>
                     <th>Nombre</th>
                     <th>Fecha de apertura</th>
                     <th colspan="2">
@@ -16,7 +18,12 @@
             </thead>
             <tbody>
                 <tr v-for='tienda in tiendas' :key="tienda.id">
-                <td width="10px">{{ tienda.id }}</td>
+                    <td width="10px">{{ tienda.id }}</td>
+                    <td width="10px" align="center">
+                        <a class="btn btn-primary btn-sm" title="Productos" v-on:click.prevent="productos(tienda.id)">
+                            <i class="fas fa-box-open"></i>
+                        </a>
+                    </td>
                     <td>{{ tienda.nombre }}</td>
                     <td>{{ tienda.fecha_apertura }}</td>
                     <td width="10px">
@@ -184,6 +191,10 @@
             changePage: function(page){
                 this.paginate.current_page = page;
                 this.getTareas(page);
+            },
+
+            productos: function(id){
+                
             }           
         }
     }

@@ -2069,6 +2069,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2183,7 +2190,8 @@ __webpack_require__.r(__webpack_exports__);
     changePage: function changePage(page) {
       this.paginate.current_page = page;
       this.getTareas(page);
-    }
+    },
+    productos: function productos(id) {}
   }
 });
 
@@ -38361,29 +38369,35 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "a",
-      {
-        staticClass: "btn btn-primary float-right",
-        attrs: {
-          href: "#",
-          "data-toggle": "modal",
-          "data-target": "#crearTienda"
-        }
-      },
-      [_vm._v("\n        Nueva tienda\n    ")]
-    ),
+    _vm._m(0),
     _c("br"),
     _c("br"),
     _vm._v(" "),
     _c("table", { staticClass: "table table-hover table-striped" }, [
-      _vm._m(0),
+      _vm._m(1),
       _vm._v(" "),
       _c(
         "tbody",
         _vm._l(_vm.tiendas, function(tienda) {
           return _c("tr", { key: tienda.id }, [
             _c("td", { attrs: { width: "10px" } }, [_vm._v(_vm._s(tienda.id))]),
+            _vm._v(" "),
+            _c("td", { attrs: { width: "10px", align: "center" } }, [
+              _c(
+                "a",
+                {
+                  staticClass: "btn btn-primary btn-sm",
+                  attrs: { title: "Productos" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.productos(tienda.id)
+                    }
+                  }
+                },
+                [_c("i", { staticClass: "fas fa-box-open" })]
+              )
+            ]),
             _vm._v(" "),
             _c("td", [_vm._v(_vm._s(tienda.nombre))]),
             _vm._v(" "),
@@ -38527,7 +38541,7 @@ var render = function() {
             [
               _c("div", { staticClass: "modal-dialog" }, [
                 _c("div", { staticClass: "modal-content" }, [
-                  _vm._m(1),
+                  _vm._m(2),
                   _vm._v(" "),
                   _c(
                     "div",
@@ -38604,7 +38618,7 @@ var render = function() {
                     2
                   ),
                   _vm._v(" "),
-                  _vm._m(2)
+                  _vm._m(3)
                 ])
               ])
             ]
@@ -38619,9 +38633,31 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "btn btn-primary float-right",
+        attrs: {
+          href: "#",
+          "data-toggle": "modal",
+          "data-target": "#crearTienda"
+        }
+      },
+      [
+        _vm._v("\n        Nueva tienda\n        "),
+        _c("i", { staticClass: "far fa-building" })
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
         _c("th", [_vm._v("ID")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Productos")]),
         _vm._v(" "),
         _c("th", [_vm._v("Nombre")]),
         _vm._v(" "),
